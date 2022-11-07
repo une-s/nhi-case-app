@@ -21,14 +21,6 @@ function Details() {
       });
   }, [username]);
 
-  if (isLoading) {
-    return (
-      <div>Loading...</div>
-    );
-  }
-  else if (user === null) {
-    return <div>That user doesn't exist</div>;
-  }
   return (
     <div>
       {
