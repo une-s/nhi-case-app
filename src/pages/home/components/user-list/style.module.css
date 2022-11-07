@@ -1,6 +1,6 @@
 .userList {
   margin: 0;
-  padding: 0;
+  padding: 8px 12px;
   list-style-type: none;
   display: flex;
   flex-wrap: wrap;

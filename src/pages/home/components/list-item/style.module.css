@@ -1,8 +1,8 @@
 .listItem {
-  margin: 5px 5px 10px;
+  margin: 5px 6px 12px;
   text-align: center;
   font-size: 1.2rem;
-  width: calc(20% - 10px);
+  width: calc(20% - 12px);
 }
 .listItem a {
   padding: 16px;
@@ -12,10 +12,14 @@
   display: block;
   color: inherit;
   text-decoration: none;
+  box-shadow: 0 0 3px rgba(0,0,0,0);
 }
 .listItem a:hover, .listItem a:active, .listItem a:focus, .listItem a:visited {
   color: inherit;
   text-decoration: none;
+  border: 1px solid #bbb;
+  box-shadow: 0 0 3px rgba(0,0,0,0.5);
+  transition: box-shadow 0.5s;
 }
 .avatarSmall {
   width: 100px;
@@ -25,13 +29,18 @@
   display: block;
   margin: 0 auto 12px;
 }
-@media (max-width: 850px) {
+@media (max-width: 900px) {
   .listItem {
-    width: calc(25% - 10px);
+    width: calc(25% - 12px);
   }
 }
-@media (max-width: 700px) {
+@media (max-width: 720px) {
   .listItem {
-    width: calc(100% / 3 - 10px);
+    width: calc(100% / 3 - 12px);
+  }
+}
+@media (max-width: 540px) {
+  .listItem {
+    width: calc(50% - 12px);
   }
 }
