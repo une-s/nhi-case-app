@@ -8,19 +8,22 @@ import {
   BrowserRouter as Router,
   Routes, Route, Navigate
 } from 'react-router-dom';
+import styles from './App.module.css';
 
 function App() {
   return (
     <Router>
       <Header />
-      <main>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/user/:username" element={<Details />} />
-          <Route path="/not-found" element={<NotFound />} />
-          <Route path="*" element={<Navigate to="/not-found" />} />
-        </Routes>
-      </main>
+      <div className={styles.pageOuter}>
+        <main className={styles.pageInner}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/user/:username" element={<Details />} />
+            <Route path="/not-found" element={<NotFound />} />
+            <Route path="*" element={<Navigate to="/not-found" />} />
+          </Routes>
+        </main>
+      </div>
       <Footer />
     </Router>
   );

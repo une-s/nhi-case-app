@@ -1,5 +1,6 @@
 import ListItem from '../list-item';
 import User from 'models/User';
+import styles from './style.module.css';
 
 interface UserListProps {
   users: User[]
@@ -7,7 +8,7 @@ interface UserListProps {
 
 function UserList({users}:UserListProps) {
   return (
-    <ul className="user-list">
+    <ul className={styles.userList}>
       {users.map(user => <ListItem key={user.id} user={user}/>)}
     </ul>
   );

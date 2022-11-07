@@ -1,17 +1,17 @@
 import { Link } from 'react-router-dom';
 import User from 'models/User';
-
-import './style.css';
+import styles from './style.module.css';
 
 interface ListItemProps {
   user: User
 }
+console.log(styles);
 
 function ListItem({user}:ListItemProps) {
   return (
-    <li className="list-item">
+    <li className={styles.listItem}>
       <Link to={`/user/${user.username}`}>
-        <img className="avatar-small" src={user.avatarUrl} alt="avatar" />
+        <img className={styles.avatarSmall} src={user.avatarUrl} alt="avatar" />
         {user.username}
       </Link>
     </li>
