@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import config from 'config.json';
-import ListItem from './components/ListItem';
+import UserList from './components/UserList';
 import User from 'models/User';
 
 function Home() {
@@ -14,7 +14,7 @@ function Home() {
       accept: "application/vnd.github+json"
     }};
     fetch(`${config.api.baseUrl}/users`, options)
-      .then((response) => {console.log(response); return response.json();})
+      .then((response) => response.json())
       .then((data) => {
         console.log(data);
         setUsers(data.map((userData:any) => new User(userData)));
@@ -27,9 +27,7 @@ function Home() {
   }
   return (
     <div>
-      <ul className="user-list">
-        {users.map(user => <ListItem key={user.id} user={user}/>)}
-      </ul>
+      <UserList users={users} />
     </div>
   );
 }
