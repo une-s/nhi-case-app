@@ -7,11 +7,10 @@ function Header() {
     <header className={styles.header}>
       <div className={styles.headerInner}>
         <div className={styles.brand}>
-          <p className={styles.brandTitle}>{config.name}</p>
+          <Link to="/">
+            <p className={styles.brandTitle}>{config.name}</p>
+          </Link>
         </div>
-        <nav className={styles.headerMenu}>
-          <Link to="/">Home</Link>
-        </nav>
       </div>
     </header>
   );

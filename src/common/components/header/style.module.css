@@ -9,13 +9,13 @@
   display: flex;
   justify-content: space-between;
 }
+.header a, .header a:hover, .header a:active, .header a:focus {
+  color: inherit;
+  text-decoration: none;
+}
 .header p {
   margin: 0;
 }
 .brandTitle {
   font-weight: bold;
-}
-.headerMenu a {
-  color: #fff;
-  text-decoration: none;
 }
