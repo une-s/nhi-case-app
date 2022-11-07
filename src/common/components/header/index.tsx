@@ -1,15 +1,15 @@
 import { Link } from 'react-router-dom';
 import config from 'settings/appConfig.json';
-import './style.css';
+import styles from './style.module.css';
 
 function Header() {
   return (
-    <header className="page-header">
-      <div className="page-header-inner">
-        <div className="brand">
-          <p className="brand-title">{config.name}</p>
+    <header className={styles.header}>
+      <div className={styles.headerInner}>
+        <div className={styles.brand}>
+          <p className={styles.brandTitle}>{config.name}</p>
         </div>
-        <nav className="header-menu">
+        <nav className={styles.headerMenu}>
           <Link to="/">Home</Link>
         </nav>
       </div>
