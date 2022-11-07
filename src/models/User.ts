@@ -1,7 +1,7 @@
 import { validateJson } from 'common/util/validators';
 
 class User {
-  login: string;
+  username: string;
   id: number;
   avatarUrl: string;
 
@@ -13,7 +13,7 @@ class User {
     // May throw TypeError
     validateJson(json, requiredProps, requiredTypes);
 
-    this.login = json.login;
+    this.username = json.login;
     this.id = json.id;
     this.avatarUrl = json.avatar_url;
   }

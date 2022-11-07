@@ -10,7 +10,7 @@ function ListItem({user}:ListItemProps) {
   return (
     <li className="list-item">
       <img className="avatar-small" src={user.avatarUrl} alt="avatar" />
-      {user.login}
+      {user.username}
     </li>
   );
 }

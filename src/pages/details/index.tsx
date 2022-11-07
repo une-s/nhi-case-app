@@ -32,7 +32,7 @@ function Details() {
     return <div>That user doesn't exist</div>;
   }
   return (
-    <div>{user.login}</div>
+    <div>{user.username}</div>
   );
 }
 
