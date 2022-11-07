@@ -18,10 +18,11 @@ function Details() {
     fetch(`${config.api.baseUrl}/users/${username}`, options)
       .then((response) => response.status === 200 ? response.json() : null)
       .then((data) => {
+        console.log(data);
         setUser(data !== null ? new User(data) : null);
         setIsLoading(false);
       });
-  }, []);
+  }, [username]);
 
   if (isLoading) {
     return (
