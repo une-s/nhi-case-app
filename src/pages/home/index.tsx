@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import apiConfig from 'settings/apiConfig.json';
-import UserList from './components/UserList';
+import UserList from './components/user-list';
 import User from 'models/User';
 
 function Home() {

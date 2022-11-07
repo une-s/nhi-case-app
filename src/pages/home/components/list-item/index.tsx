@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import User from 'models/User';
 
-import './ListItem.css';
+import './style.css';
 
 interface ListItemProps {
   user: User
