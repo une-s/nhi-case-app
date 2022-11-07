@@ -28,9 +28,7 @@ function Home() {
   return (
     <div>
       <ul className="user-list">
-        {users.map(user => {
-          return <ListItem user={user}/>;
-        })}
+        {users.map(user => <ListItem key={user.id} user={user}/>)}
       </ul>
     </div>
   );

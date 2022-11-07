@@ -8,7 +8,7 @@ interface ListItemProps {
 
 function ListItem({user}:ListItemProps) {
   return (
-    <li key={user.id} className="list-item">
+    <li className="list-item">
       <img className="avatar-small" src={user.avatarUrl} alt="avatar" />
       {user.login}
     </li>
