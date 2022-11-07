@@ -1,18 +1,18 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Home from './pages/home/index';
+import Header from './common/components/Header';
+import Footer from './common/components/Footer';
+import Home from './pages/home';
 
 function App() {
   return (
     <>
-      <header>
-      </header>
+      <Header />
       <main>
         <Home />
       </main>
-      <footer>
-      </footer>
+      <Footer />
     </>
   );
 }
