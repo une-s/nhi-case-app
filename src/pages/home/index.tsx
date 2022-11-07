@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import config from 'config.json';
+import apiConfig from 'settings/apiConfig.json';
 import UserList from './components/UserList';
 import User from 'models/User';
 
@@ -10,10 +10,7 @@ function Home() {
 
   useEffect(() => {
     setIsLoading(true);
-    const options = { headers: {
-      accept: "application/vnd.github+json"
-    }};
-    fetch(`${config.api.baseUrl}/users`, options)
+    fetch(`${apiConfig.baseUrl}/users`, apiConfig.getOptions)
       .then((response) => response.json())
       .then((data) => {
         console.log(data);

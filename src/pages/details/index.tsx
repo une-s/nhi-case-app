@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import config from 'config.json';
+import { Link, useParams } from 'react-router-dom';
+import apiConfig from 'settings/apiConfig.json';
 import User from 'models/User';
 
 function Details() {
@@ -12,10 +12,7 @@ function Details() {
 
   useEffect(() => {
     setIsLoading(true);
-    const options = { headers: {
-      accept: "application/vnd.github+json"
-    }};
-    fetch(`${config.api.baseUrl}/users/${username}`, options)
+    fetch(`${apiConfig.baseUrl}/users/${username}`, apiConfig.getOptions)
       .then((response) => response.status === 200 ? response.json() : null)
       .then((data) => {
         console.log(data);
@@ -33,7 +30,14 @@ function Details() {
     return <div>That user doesn't exist</div>;
   }
   return (
-    <div>{user.username}</div>
+    <div>
+      {
+        isLoading ? "Loading..." :
+        user === null ? "That user doesn't exist" :
+        user.username
+      }
+      <Link to="/">Back to Home</Link>
+    </div>
   );
 }
 
