@@ -13,9 +13,9 @@ import styles from './App.module.css';
 function App() {
   return (
     <Router>
-      <Header />
-      <div className={styles.pageOuter}>
-        <main className={styles.pageInner}>
+      <div className={styles.app}>
+        <Header />
+        <main className={styles.content}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/user/:username" element={<Details />} />
@@ -23,8 +23,8 @@ function App() {
             <Route path="*" element={<Navigate to="/not-found" />} />
           </Routes>
         </main>
+        <Footer />
       </div>
-      <Footer />
     </Router>
   );
 }

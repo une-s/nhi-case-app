@@ -1,9 +1,13 @@
-.pageOuter {
+.app {
   background-color: #ddd;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
-.pageInner {
+.content{
+  flex: 1;
+  width: 100%;
   max-width: 1080px;
   background-color: #fff;
   margin: 0 auto;
-  padding: 0;
 }
