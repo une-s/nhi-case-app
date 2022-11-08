@@ -15,8 +15,8 @@ function Details() {
 
   const { username } = useParams();
 
+  // Fetch user
   useEffect(() => {
-    // Fetch user
     setIsLoadingUser(true);
     fetch(`${apiConfig.baseUrl}/users/${username}`, apiConfig.getOptions)
       .then((response) => response.status === 200 ? response.json() : null)
@@ -29,8 +29,10 @@ function Details() {
         setUser(null);
       })
       .finally(() => setIsLoadingUser(false));
+  }, [username]);
 
-    // Fetch repos
+  // Fetch repos
+  useEffect(() => {
     setIsLoadingRepos(true);
     fetch(
         `${apiConfig.baseUrl}/users/${username}/repos?per_page=10`,
