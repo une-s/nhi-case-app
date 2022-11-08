@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import apiConfig from 'settings/apiConfig.json';
-import User from 'models/User';
+import DetailedUser from 'models/DetailedUser';
 
 function Details() {
 
-  const [user, setUser] = useState<User|null>(null);
+  const [user, setUser] = useState<DetailedUser|null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
   const { username } = useParams();
@@ -16,7 +16,7 @@ function Details() {
       .then((response) => response.status === 200 ? response.json() : null)
       .then((data) => {
         console.log(data);
-        setUser(data !== null ? new User(data) : null);
+        setUser(data !== null ? new DetailedUser(data) : null);
         setIsLoading(false);
       });
   }, [username]);
@@ -26,9 +26,11 @@ function Details() {
       {
         isLoading ? "Loading..." :
         user === null ? "That user doesn't exist" :
-        user.username
+        <>
+          <h1>{user.username}</h1>
+          <img src={user.avatarUrl} alt="avatar" />
+        </>
       }
-      <Link to="/">Back to Home</Link>
     </div>
   );
 }
