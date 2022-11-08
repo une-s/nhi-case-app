@@ -5,7 +5,6 @@ import styles from './style.module.css';
 interface ListItemProps {
   user: User
 }
-console.log(styles);
 
 function ListItem({user}:ListItemProps) {
   return (

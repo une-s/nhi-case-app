@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import apiConfig from 'settings/apiConfig.json';
+import SearchBar from './components/search-bar';
 import UserList from './components/user-list';
 import User from 'models/User';
 
@@ -24,6 +25,7 @@ function Home() {
   }
   return (
     <div>
+      <SearchBar />
       <UserList users={users} />
     </div>
   );

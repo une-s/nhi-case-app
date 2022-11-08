@@ -1,0 +1,39 @@
+.searchForm {
+  padding: 12px 18px 0;
+}
+.searchBarWrapper {
+  position: relative;
+}
+.searchBar {
+  display: block;
+  width: 100%;
+  padding: 4px 8px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+}
+.searchButton {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 2.5rem;
+  border-radius: 0 3px 3px 0;
+  border: none;
+  border-left: 1px solid #ddd;
+  background-color: #68e;
+  color: #fff;
+}
+.searchBar, .searchButton {
+  font-size: 1.2rem;
+}
+@media (max-width: 720px) {
+  .searchForm {
+    padding: 0;
+  }
+  .searchBar {
+    font-size: 1.5rem;
+  }
+  .searchButton {
+    display: none;
+  }
+}
