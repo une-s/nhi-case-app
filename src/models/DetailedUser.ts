@@ -7,6 +7,7 @@ class DetailedUser extends User {
   githubUrl: string;
   followers: number;
   following: number;
+  publicRepos: number;
   bio?: string;
   company?: string;
   email?: string;
@@ -14,8 +15,8 @@ class DetailedUser extends User {
 
   constructor(json: any) {
     super(json);
-    const requiredProps:string[] = ['name', 'html_url', 'followers', 'following'];
-    const requiredTypes:string[] = ['string', 'string', 'number', 'number'];
+    const requiredProps:string[] = ['name', 'html_url', 'followers', 'following', 'public_repos'];
+    const requiredTypes:string[] = ['string', 'string', 'number', 'number', 'number'];
 
     // May throw TypeError
     validateJson(json, requiredProps, requiredTypes);
@@ -24,6 +25,7 @@ class DetailedUser extends User {
     this.githubUrl = json.html_url;
     this.followers = json.followers;
     this.following = json.following;
+    this.publicRepos = json.public_repos;
     this.bio = json.bio;
     this.company = json.company;
     this.email = json.email;
