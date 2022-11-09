@@ -1,5 +1,8 @@
-.searchBarWrapper {
+.wrapperOuter {
   padding: 12px 18px 0;
+}
+.wrapperInner {
+  position: relative;
 }
 .searchBar {
   display: block;
@@ -7,13 +10,25 @@
   padding: 4px 8px;
   border: 1px solid #ddd;
   border-radius: 3px;
+}
+.searchIcon {
+  pointer-events: none;
+}
+.searchIcon > svg {
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(0,0,0,0.5);
+}
+.searchBar, .searchIcon {
   font-size: 1.2rem;
 }
 @media (max-width: 720px) {
-  .searchBarWrapper {
+  .wrapperOuter {
     padding: 0;
   }
-  .searchBar {
+  .searchBar, .searchIcon {
     font-size: 1.5rem;
   }
 }

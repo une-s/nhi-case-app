@@ -1,3 +1,4 @@
+import { GoSearch } from 'react-icons/go'
 import styles from './style.module.css';
 
 interface SearchBarProps {
@@ -6,11 +7,14 @@ interface SearchBarProps {
 
 function SearchBar({onChange}:SearchBarProps) {
   return (
-    <div className={styles.searchBarWrapper}>
-      <input
-        className={styles.searchBar}
-        onChange={onChange}
-        placeholder="Search..." />
+    <div className={styles.wrapperOuter}>
+      <div className={styles.wrapperInner}>
+        <input
+          className={styles.searchBar}
+          onChange={onChange}
+          placeholder="Search..." />
+        <span className={styles.searchIcon}><GoSearch /></span>
+      </div>
     </div>
   );
 }

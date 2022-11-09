@@ -29,7 +29,6 @@ function Home() {
   const isLoading = users.timeStamp < 0;
 
   useEffect(() => {
-    console.log(query.value);
     // Sets the users state unless the prev state is from a more recent search
     function setUsersIfNewer(users:User[], errorOccurred:boolean) {
       setUsers(prev => {
