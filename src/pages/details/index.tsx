@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { GoOrganization } from 'react-icons/go';
 import apiConfig from 'settings/apiConfig.json';
 import DetailedUser from 'models/DetailedUser';
 import Repository from 'models/Repository';
@@ -49,7 +50,7 @@ function Details() {
     <div className={styles.wrapper}>
       {
         isLoadingUser ? "Loading..." :
-        user === null ? "That user doesn't exist" :
+        user === null ? "Couldn't find that user" :
         <>
           <section className={styles.leftSection}>
             <img className={styles.avatar} src={user.avatarUrl} alt="avatar" />
@@ -57,27 +58,37 @@ function Details() {
               <span className={styles.name}>{user.name}</span>
               <span className={styles.username}>{user.username}</span>
             </h1>
-            <ul>
-              <li>Followers: {user.followers}</li>
-              <li>Following: {user.following}</li>
-              <li>Public repos: {user.publicRepos}</li>
-            </ul>
-            <h2>Websites</h2>
-            <ul>
-              <li><a href={user.githubUrl} target="_blank" rel="noreferrer">
-                Github Page
-              </a></li>
-              {
-                user.blogUrl ?
-                  <li><a href={user.blogUrl} target="_blank" rel="noreferrer">
-                    Blog Website
-                  </a></li> :
-                  null
-              }
-            </ul>
+            <div className={styles.profileBody}>
+              <div className={styles.followStats}>
+                <GoOrganization />
+                <span>{user.followers} followers</span>
+                <span>·</span>
+                <span>{user.following} following</span>
+              </div>
+              <h2>Websites</h2>
+              <ul>
+                <li><a href={user.githubUrl} target="_blank" rel="noreferrer">
+                  Github Page
+                </a></li>
+                {
+                  user.blogUrl ?
+                    <li><a href={user.blogUrl} target="_blank" rel="noreferrer">
+                      Blog Website
+                    </a></li> :
+                    null
+                }
+              </ul>
+            </div>
           </section>
           <section className={styles.rightSection}>
-            <h2>Repositories{user.publicRepos > 10 ? " (first 10)" : ""}</h2>
+            <h2>Public Repositories <span className={styles.small}>(total {user.publicRepos})</span></h2>
+            <p>
+              Viewing first {repos.length}.
+              You can browse all on their <a
+                href={user.githubUrl + '?tab=repositories'}
+                target="_blank"
+                rel="noreferrer">GitHub profile</a>.
+            </p>
             {
               isLoadingRepos ? "Loading..." :
               <RepoList repos={repos} />

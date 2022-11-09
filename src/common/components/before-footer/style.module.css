@@ -3,3 +3,28 @@
   margin: 0 24px;
   padding: 16px 0 24px;
 }
+.beforeFooter a, .beforeFooter a:visited {
+  color: inherit;
+  text-decoration: inherit;
+}
+.backLink > a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 14rem;
+  border: 1px solid #ddd;
+  border-radius: 7px;
+  padding: 6px 12px;
+  font-size: 1.2rem;
+}
+.backLink a:hover, .backLink a:active, .backLink a:focus {
+  transition: all 0.2s;
+  background-color: #89a;
+  color: #fff;
+  box-shadow: 0 0 4px #dde4e4;
+}
+.backLink svg {
+  margin-right: 8px;
+  font-size: 1.5rem;
+}

@@ -1,5 +1,6 @@
 import { Location } from 'history';
 import { Link, useLocation } from "react-router-dom";
+import { BsArrowLeftCircle } from "react-icons/bs";
 import styles from './style.module.css';
 
 function BeforeFooter(props:any) {
@@ -9,7 +10,9 @@ function BeforeFooter(props:any) {
   }
   return (
     <div className={styles.beforeFooter}>
-      <Link to="/">Back to Home</Link>
+      <div className={styles.backLink}>
+        <Link to="/"><BsArrowLeftCircle /> Back to Home</Link>
+      </div>
     </div>
   );
 }

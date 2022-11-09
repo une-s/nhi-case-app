@@ -1,17 +1,24 @@
 .wrapper {
-  margin: 32px 24px;
+  margin: 1.5rem 24px;
   display: flex;
 }
 .leftSection {
   display: flex;
   flex-direction: column;
-  border-right: 1px solid #ddd;
+  border-right: 1px solid #eee;
+  padding-top: 16px;
   padding-right: 24px;
   flex: 1;
 }
 .rightSection {
   padding-left: 24px;
   flex: 3;
+}
+h2 {
+  margin: 1.1rem 0 0.7rem;
+}
+p {
+  margin: 0.5rem 0;
 }
 .avatar {
   width: 200px;
@@ -25,10 +32,11 @@
   margin: 0;
 }
 .title::after {
-  margin-top: 6px;
+  margin: 6px auto 0;
   content: "";
   display: block;
   height: 2px;
+  max-width: 320px;
   background-color: #bbb;
   border-radius: 50%;
 }
@@ -41,4 +49,30 @@
   display: block;
   font-size: 1.2rem;
   text-align: center;
+}
+.profileBody {
+  margin-top: 0.5rem;
+}
+.followStats {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
+}
+.followStats>*:not(:last-child) {
+  margin-right: 0.3rem;
+}
+.small {
+  font-size: 0.7em;
+  color: #555;
+}
+@media (max-width: 720px) {
+  .wrapper {
+    display: block;
+  }
+  .leftSection, .rightSection {
+    padding-left: 0;
+    padding-right: 0;
+    border: none;
+  }
 }
