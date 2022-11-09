@@ -5,6 +5,7 @@ import apiConfig from 'settings/apiConfig.json';
 import DetailedUser from 'models/DetailedUser';
 import Repository from 'models/Repository';
 import RepoList from './components/repo-list';
+import LoadingComponent from 'common/components/loading-component';
 import styles from './style.module.css';
 
 function Details() {
@@ -49,7 +50,7 @@ function Details() {
   return (
     <div className={styles.wrapper}>
       {
-        isLoadingUser ? "Loading..." :
+        isLoadingUser ? <LoadingComponent /> :
         user === null ? "Couldn't find that user" :
         <>
           <section className={styles.leftSection}>
@@ -90,7 +91,7 @@ function Details() {
                 rel="noreferrer">GitHub profile</a>.
             </p>
             {
-              isLoadingRepos ? "Loading..." :
+              isLoadingRepos ? <LoadingComponent /> :
               <RepoList repos={repos} />
             }
           </section>

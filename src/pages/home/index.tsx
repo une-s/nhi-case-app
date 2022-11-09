@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import apiConfig from 'settings/apiConfig.json';
+import LoadingComponent from 'common/components/loading-component';
 import SearchBar from './components/search-bar';
 import UserList from './components/user-list';
 import User from 'models/User';
@@ -72,7 +73,7 @@ function Home() {
   return (
     <div>
       <SearchBar onChange={onSearchChange} />
-      { isLoading ? 'Loading...' :
+      { isLoading ? <LoadingComponent /> :
         users.errorOccurred ? 'Failed to load users' :
         <UserList users={users.users} /> }
     </div>
