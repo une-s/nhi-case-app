@@ -1,17 +1,17 @@
 import styles from './style.module.css';
 
-function submit(event: React.FormEvent<HTMLFormElement>) {
-  event.preventDefault();
+interface SearchBarProps {
+  onChange?: (event:React.ChangeEvent<HTMLInputElement>) => void
 }
 
-function SearchBar() {
+function SearchBar({onChange}:SearchBarProps) {
   return (
-    <form className={styles.searchForm} onSubmit={submit}>
-      <div className={styles.searchBarWrapper}>
-        <input className={styles.searchBar} placeholder="Search..." />
-        <button type="submit" className={styles.searchButton}>OK</button>
-      </div>
-    </form>
+    <div className={styles.searchBarWrapper}>
+      <input
+        className={styles.searchBar}
+        onChange={onChange}
+        placeholder="Search..." />
+    </div>
   );
 }
 export default SearchBar;
