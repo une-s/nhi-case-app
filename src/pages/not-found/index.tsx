@@ -1,8 +1,11 @@
+import styles from './style.module.css';
+
 function NotFound() {
   return (
-    <>
-      <h1>Not Found</h1>
-    </>
+    <div className={styles.notFound}>
+      <h1>Oops!</h1>
+      <p>We couldn't find that page.</p>
+    </div>
   );
 }
 
