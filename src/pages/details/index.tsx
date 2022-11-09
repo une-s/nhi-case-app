@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import apiConfig from 'settings/apiConfig.json';
 import DetailedUser from 'models/DetailedUser';
 import Repository from 'models/Repository';
-import RepoListItem from './components/repo-list-item';
+import RepoList from './components/repo-list';
 import styles from './style.module.css';
 
 function Details() {
@@ -51,10 +51,12 @@ function Details() {
         isLoadingUser ? "Loading..." :
         user === null ? "That user doesn't exist" :
         <>
-          <section className={styles.profile}>
+          <section className={styles.leftSection}>
             <img className={styles.avatar} src={user.avatarUrl} alt="avatar" />
-            <h1>{user.name}</h1>
-            <h2>{user.username}</h2>
+            <h1 className={styles.title}>
+              <span className={styles.name}>{user.name}</span>
+              <span className={styles.username}>{user.username}</span>
+            </h1>
             <ul>
               <li>Followers: {user.followers}</li>
               <li>Following: {user.following}</li>
@@ -74,13 +76,11 @@ function Details() {
               }
             </ul>
           </section>
-          <section className={styles.repos}>
+          <section className={styles.rightSection}>
             <h2>Repositories{user.publicRepos > 10 ? " (first 10)" : ""}</h2>
             {
               isLoadingRepos ? "Loading..." :
-              <ul>{ repos.map(repo => <RepoListItem
-                repo={repo}
-                key={repo.id} />) }</ul>
+              <RepoList repos={repos} />
             }
           </section>
         </>

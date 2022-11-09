@@ -3,11 +3,11 @@ import { validateJson } from 'common/util/validators';
 
 class DetailedUser extends User {
 
-  name: string;
   githubUrl: string;
   followers: number;
   following: number;
   publicRepos: number;
+  name?: string;
   bio?: string;
   company?: string;
   email?: string;
@@ -15,8 +15,8 @@ class DetailedUser extends User {
 
   constructor(json: any) {
     super(json);
-    const requiredProps:string[] = ['name', 'html_url', 'followers', 'following', 'public_repos'];
-    const requiredTypes:string[] = ['string', 'string', 'number', 'number', 'number'];
+    const requiredProps:string[] = ['html_url', 'followers', 'following', 'public_repos'];
+    const requiredTypes:string[] = ['string', 'number', 'number', 'number'];
 
     // May throw TypeError
     validateJson(json, requiredProps, requiredTypes);

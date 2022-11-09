@@ -1,6 +1,36 @@
+.wrapper {
+  margin: 32px 24px;
+  display: flex;
+}
+.leftSection {
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #eee;
+  padding-right: 24px;
+  flex: 1;
+}
+.rightSection {
+  padding-left: 24px;
+  flex: 3;
+}
 .avatar {
   width: 200px;
   height: 200px;
   object-fit: cover;
   border-radius: 50%;
+  margin-bottom: 0.5rem;
+  align-self: center;
+}
+.title {
+  margin: 0;
+}
+.name {
+  display: block;
+  font-size: 1.5rem;
+  text-align: center;
+}
+.username {
+  display: block;
+  font-size: 1.2rem;
+  text-align: center;
 }
