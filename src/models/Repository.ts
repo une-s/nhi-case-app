@@ -5,6 +5,7 @@ class Repository {
   id: number;
   name: string;
   fullName: string;
+  description?: string;
 
   constructor(json: any) {
     const requiredProps:string[] = ['id', 'name', 'full_name'];
@@ -16,6 +17,7 @@ class Repository {
     this.id = json.id;
     this.name = json.name;
     this.fullName = json.full_name;
+    this.description = json.description;
   }
 }
 export default Repository;

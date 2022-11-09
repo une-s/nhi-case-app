@@ -6,6 +6,15 @@ interface RepoListItemProps {
 }
 
 function RepoListItem({repo}:RepoListItemProps) {
-  return <li className={styles.repoListItem}>{repo.name}</li>
+  return (
+    <li className={styles.repoListItem}>
+      <h3 className={styles.title}>{repo.name}</h3>
+      <div className={styles.itemBody}>
+        { repo.description ?
+          <p className={styles.description}>{repo.description}</p> :
+          null }
+      </div>
+    </li>
+  );
 }
 export default RepoListItem;
