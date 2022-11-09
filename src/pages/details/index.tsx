@@ -83,7 +83,7 @@ function Details() {
           <section className={styles.rightSection}>
             <h2>Public Repositories <span className={styles.small}>(total {user.publicRepos})</span></h2>
             <p>
-              Viewing first {repos.length}.
+              Showing first {repos.length} repositories.
               You can browse all on their <a
                 href={user.githubUrl + '?tab=repositories'}
                 target="_blank"

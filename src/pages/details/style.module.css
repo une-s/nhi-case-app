@@ -14,11 +14,11 @@
   padding-left: 24px;
   flex: 3;
 }
-h2 {
+.wrapper h2 {
   margin: 1.1rem 0 0.7rem;
 }
-p {
-  margin: 0.5rem 0;
+.wrapper p {
+  margin: 0;
 }
 .avatar {
   width: 200px;
